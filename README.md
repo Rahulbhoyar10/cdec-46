@@ -1,4 +1,4 @@
-# cdec38
+# cdec46
 for devops practice
 
 DevOps and Software Industry Overview

@@ -46,7 +46,7 @@ resource "aws_instance" "my-ce2" {
    key_name = var.key_pair
    #security_groups = ["default"]
    vpc_security_group_ids = [aws_security_group.my-sg.id]
-   subnet_id = var.pub_sub
+   subnet_id = aws_subnet.main.id
 
 }
 

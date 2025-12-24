@@ -26,3 +26,41 @@ variable "instance_type" {
         nano = "t2.nano"
     }
 }
+
+
+---
+
+## TERRAFORM TAINT
+provider "aws" {
+    region = "us-east-2"
+}
+
+
+
+
+resource "aws_instance" "ec2" {
+
+    ami = "ami-0f5fcdfbd140e4ab7"
+    instance_type = "t3.micro"
+    key_name = "ohio-key"
+    security_groups = ["default"]
+
+
+    tags = {
+        # ENV = dev
+        Name = "my-workspace-instance"
+    }
+ }   
+
+
+## TERRAFORM IMPORT
+
+provider "aws"{
+    region = "us-east-2"
+}
+
+ resource "aws_instance" "demo_import" {
+    ami = ""
+    instance_type = ""
+
+ }
